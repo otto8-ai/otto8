@@ -14,9 +14,13 @@ import {
     getModelUsageLabel,
     getModelsForProvider,
 } from "~/lib/model/models";
+import { BadRequestError } from "~/lib/service/api/apiErrors";
 import { ModelApiService } from "~/lib/service/api/modelApiService";
 
-import { ControlledCustomInput } from "~/components/form/controlledInputs";
+import {
+    ControlledCheckbox,
+    ControlledCustomInput,
+} from "~/components/form/controlledInputs";
 import { Button } from "~/components/ui/button";
 import { Form } from "~/components/ui/form";
 import {
@@ -67,6 +71,7 @@ export function ModelForm(props: ModelFormProps) {
             targetModel: model?.targetModel ?? "",
             modelProvider: model?.modelProvider ?? "",
             active: model?.active ?? true,
+            default: model?.default ?? false,
             usage: model?.usage ?? ModelUsage.LLM,
         };
     }, [model]);
@@ -179,6 +184,12 @@ export function ModelForm(props: ModelFormProps) {
                     )}
                 </ControlledCustomInput>
 
+                <ControlledCheckbox
+                    control={form.control}
+                    name="default"
+                    label="Default Model"
+                />
+
                 <Button
                     type="submit"
                     className="w-full"
@@ -209,7 +220,7 @@ export function ModelForm(props: ModelFormProps) {
     }
 
     function onError(error: unknown) {
-        if (error instanceof Error) toast.error(error.message);
-        else toast.error("Model failed to save.");
+        if (error instanceof BadRequestError)
+            form.setError("default", { message: error.message });
     }
 }
