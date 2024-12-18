@@ -7,6 +7,7 @@ import { GitHubOAuthApp } from "~/lib/model/oauthApps/providers/github";
 import { GoogleOAuthApp } from "~/lib/model/oauthApps/providers/google";
 import { Microsoft365OAuthApp } from "~/lib/model/oauthApps/providers/microsoft365";
 import { NotionOAuthApp } from "~/lib/model/oauthApps/providers/notion";
+import { SalesforceOAuthApp } from "~/lib/model/oauthApps/providers/salesforce";
 import { SlackOAuthApp } from "~/lib/model/oauthApps/providers/slack";
 import { EntityMeta } from "~/lib/model/primitives";
 
@@ -16,6 +17,7 @@ export const OAuthAppSpecMap = {
     [OAuthProvider.Google]: GoogleOAuthApp,
     [OAuthProvider.Microsoft365]: Microsoft365OAuthApp,
     [OAuthProvider.Slack]: SlackOAuthApp,
+    [OAuthProvider.Salesforce]: SalesforceOAuthApp,
     [OAuthProvider.Notion]: NotionOAuthApp,
     // Custom OAuth apps are intentionally omitted from the map.
     // They are handled separately
@@ -47,6 +49,8 @@ export type OAuthAppParams = {
     optionalScope?: string;
     // This field is required, it correlates to the integration name in the gptscript oauth cred tool
     integration: string;
+    // This field is only needed for Salesforce OAuth apps
+    instanceURL?: string;
 };
 
 export type OAuthAppBase = OAuthAppParams & {
