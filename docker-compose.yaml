@@ -1,0 +1,35 @@
+services:
+  otto8:
+    restart: always
+    build: .
+    environment:
+    - OPENAI_API_KEY=${OPENAI_API_KEY}
+    - OBOT_SERVER_DSN=postgresql://postgres:postgres@postgres:5432/otto8
+    ports:
+    - 8081:8080
+    volumes:
+    - ./agents:/agents
+    - dockersocket:/var/run
+    - data:/data
+
+  docker:
+    image: docker:dind
+    privileged: true
+    volumes:
+    - docker:/var/lib/docker
+    - dockersocket:/var/run
+    - data:/data
+
+  postgres:
+    environment:
+    - POSTGRES_PASSWORD=postgres
+    - POSTGRES_DB=otto8
+    image: postgres:17
+    volumes:
+    - db:/var/lib/postgresql/data
+
+volumes:
+  data: {}
+  docker: {}
+  dockersocket: {}
+  db: {}
