@@ -92,7 +92,6 @@ tools:
 - browser-bundle
 - google-search-bundle
 availableThreadTools:
-- google-gmail-bundle
 - notion-bundle
 defaultThreadTools:
 - slack-bundle
