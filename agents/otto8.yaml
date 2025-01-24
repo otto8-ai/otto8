@@ -4,6 +4,7 @@ default: true
 description: DevOps is my Jam
 icons:
   icon: /images/otto8-icon-blue.svg
+  iconDark: /images/otto8-icon-blue.svg
   collapsed: /images/otto8-logo-blue-black-text.svg
   collapsedDark: /images/otto8-logo-blue-white-text.svg
 introductionMessage: |
