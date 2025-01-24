@@ -83,7 +83,6 @@ knowledgeDescription: |
 
 tools:
 - images-bundle
-- sendgrid-bundle
 - database
 - knowledge
 - shell

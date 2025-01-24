@@ -5,6 +5,8 @@ services:
     environment:
     - OPENAI_API_KEY=${OPENAI_API_KEY}
     - OBOT_SERVER_DSN=postgresql://postgres:postgres@postgres:5432/otto8
+    # Change this to use your own docker images for the shell
+    - OBOT_SHELL_IMAGE=ubuntu
     ports:
     - 8081:8080
     volumes:

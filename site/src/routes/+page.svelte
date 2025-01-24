@@ -17,7 +17,7 @@
 		{
 			title: 'Tasks',
 			description:
-				'Trigger sequential AI steps from a webhook, email, cron or on demand. Tasks can call tasks and create tasks.',
+				'Trigger sequential AI steps from a webhook, cron or on demand. Tasks can call tasks and create tasks.',
 			image: './images/tasks.png'
 		},
 		{
