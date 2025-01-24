@@ -5,9 +5,7 @@ import colors from 'tailwindcss/colors';
 const grayBase = 2.5;
 
 export default {
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-	],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 
 	darkMode: 'class',
 

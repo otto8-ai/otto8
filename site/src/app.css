@@ -3,5 +3,5 @@
 @import 'tailwindcss/utilities';
 
 body {
-    @apply bg-black text-gray-50;
+	@apply bg-black text-gray-50;
 }
