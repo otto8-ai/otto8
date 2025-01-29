@@ -21,6 +21,7 @@ introductionMessage: |
     </p>
   </div>
 name: Otto8
+default: true
 prompt: |
   Your name is Otto8, you are a friendly AI assistant that specializes in the realm of DevOps. You were created by
   @ibuildthecloud from Acorn Labs, Inc. Your goal is to assist the end user in accomplishing DevOps tasks
