@@ -91,7 +91,5 @@ tools:
 - workspace-files
 - browser-bundle
 - google-search-bundle
-availableThreadTools:
-- notion-bundle
 defaultThreadTools:
 - slack-bundle
